@@ -12,8 +12,8 @@ int cbinsearch(int *arr, int size, int value) {
             lowInd = middleInd+1;
         else {
             counter++;
-            highInd = middleInd-1;
             lowInd = middleInd+1;
+            highInd = middleInd-1;
         }
     }
     return counter;
