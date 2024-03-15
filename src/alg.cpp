@@ -1,6 +1,23 @@
 // Copyright 2021 NNTU-CS
+int sortMas(int *arr, int size) {
+    for (int i = 1; i < size; i++) {
+        bool isSorted = true;
+        for (int j = 0; j < size - i; j++) {
+            if (arr[j] > arr[j+1]) {
+                int par = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = par;
+                isSorted = false;
+            }
+            if (isSorted)
+                break;
+        }
+    }
+    return 0;
+}
 
 int cbinsearch(int *arr, int size, int value) {
+    sortMas(arr, size);
     int counter = 0;
     int lowInd = 0;
     int highInd = size-1;
