@@ -7,9 +7,9 @@ int cbinsearch(int *arr, int size, int value) {
     while (lowInd <= highInd) {
         int middleInd = lowInd+(highInd-lowInd)/2;
         if (arr[middleInd] > value)
-            highInd--;
+            highInd = middleInd-1;
         else if (arr[middleInd] < value)
-            lowInd++;
+            lowInd = middleInd+1;
         else
             counter++;
     }
